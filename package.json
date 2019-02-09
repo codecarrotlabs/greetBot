@@ -8,6 +8,10 @@
     "start": "node app.js",
     "deploy": "git push heroku master"
   },
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.4.1"
+  },
   "author": "CodeCarrot",
   "license": "ISC",
   "dependencies": {
