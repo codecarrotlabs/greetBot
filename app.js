@@ -5,6 +5,9 @@ const app = express()
 const client = new Discord.Client()
 
 app.listen(process.env.PORT || 3000)
+app.get('/', (req, res) => {
+	res.send('Your Bot is running at port ' + process.env.PORT || 3000)
+})
 let greetMessagesList = []
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
@@ -18,7 +21,8 @@ client.on('guildMemberAdd', member => {
 		getWelcomeMessage()
 			.then(result => {
 				const channelOutput = member.guild.channels.find(
-					channel => channel.name === 'general').id
+					channel => channel.name === 'general'
+				).id
 				member.guild.channels
 					.get(channelOutput)
 					.send('<@!' + userId + '> ' + result)
@@ -43,7 +47,7 @@ async function fetchAllMessages() {
 		console.log(
 			"This channel doesn't exist, please create one with the name 'greetmessages'."
 		)
-		console.log(error);
+		console.log(error)
 	}
 }
 
