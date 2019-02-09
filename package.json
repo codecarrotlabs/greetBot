@@ -4,8 +4,8 @@
   "description": "A discord bot which will greet you with passion.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "develop": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "deploy": "now",
   },
   "author": "",
   "license": "ISC",
