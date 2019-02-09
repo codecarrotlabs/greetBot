@@ -7,7 +7,7 @@ const channelInput = process.env.channelInput
 const channelOutput = process.env.channelOutput
 
 app.listen(process.env.PORT)
-
+let greetMessagesList = []
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
 })
@@ -31,7 +31,6 @@ client.on('guildMemberAdd', member => {
 })
 
 async function fetchAllMessages() {
-	let greetMessagesList = []
 	const channel = client.channels.find(channel => channel.id === channelInput)
 	const channelMessage = await channel.fetchMessages()
 	try {
