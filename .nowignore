@@ -1,0 +1,5 @@
+LICENSE
+.gitlab/**
+.github/**
+README.md
+node_modules
