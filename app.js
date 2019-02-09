@@ -4,7 +4,6 @@ require('dotenv').config()
 const app = express()
 const client = new Discord.Client()
 
-app.listen(process.env.NODE_PORT || 3000)
 app.get('/', (req, res) => {
 	res.send('Your Bot is running at port ' + process.env.NODE_PORT || 3000)
 })
@@ -64,3 +63,4 @@ function randomNumber(min, max) {
 }
 
 client.login(process.env.DISCORD_BOT_TOKEN)
+app.listen(process.env.NODE_PORT || 3000)
