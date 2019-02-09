@@ -3,8 +3,6 @@ const Discord = require('discord.js')
 require('dotenv').config()
 const app = express()
 const client = new Discord.Client()
-const channelInput = process.env.channelInput
-const channelOutput = process.env.channelOutput
 
 app.listen(process.env.PORT || 3000)
 let greetMessagesList = []
@@ -19,6 +17,8 @@ client.on('guildMemberAdd', member => {
 	if (!userBot) {
 		getWelcomeMessage()
 			.then(result => {
+				const channelOutput = member.guild.channels.find(
+					channel => channel.name === 'general').id
 				member.guild.channels
 					.get(channelOutput)
 					.send('<@!' + userId + '> ' + result)
@@ -30,7 +30,9 @@ client.on('guildMemberAdd', member => {
 })
 
 async function fetchAllMessages() {
-	const channel = client.channels.find(channel => channel.id === channelInput)
+	const channel = client.channels.find(
+		channel => channel.name === 'greetmessages'
+	)
 	const channelMessage = await channel.fetchMessages()
 	try {
 		channelMessage.map(message => {
@@ -38,7 +40,10 @@ async function fetchAllMessages() {
 		})
 		return (greetMessagesList = greetMessagesList.reverse())
 	} catch (error) {
-		console.log(error)
+		console.log(
+			"This channel doesn't exist, please create one with the name 'greetmessages'."
+		)
+		console.log(error);
 	}
 }
 
