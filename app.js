@@ -10,23 +10,22 @@ app.listen(process.env.PORT)
 let greetMessagesList = []
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
+	fetchAllMessages()
 })
 
 client.on('guildMemberAdd', member => {
 	let userId = member.user.id
 	let userBot = member.user.bot
 	if (!userBot) {
-		member.guild.channels.get(channelOutput).send(
-			'<@!' +
-				userId +
-				'> ' +
-				getWelcomeMessage().then(res => {
-          console.log(res);
-					return res;
-				}).catch(err => {
-          console.log(err);
-        })
-		)
+		getWelcomeMessage()
+			.then(result => {
+				member.guild.channels
+					.get(channelOutput)
+					.send('<@!' + userId + '> ' + result)
+			})
+			.catch(error => {
+				console.log(error)
+			})
 	}
 })
 
@@ -44,16 +43,6 @@ async function fetchAllMessages() {
 }
 
 async function getWelcomeMessage() {
-	let greetMessagesList = []
-	fetchAllMessages()
-		.then(result => {
-			return (greetMessagesList = result)
-		})
-		.catch(error => {
-			console.log(error)
-		})
-	console.log(greetMessagesList)
-	console.log(greetMessagesList.length)
 	const number = randomNumber(1, greetMessagesList.length)
 	console.log(number + ': ' + greetMessagesList[number])
 	return greetMessagesList[number]
