@@ -5,7 +5,7 @@ const app = express()
 const client = new Discord.Client()
 
 app.get('/', (req, res) => {
-	res.send('Your Bot is running at port ' + process.env.NODE_PORT || 3000)
+	res.send('Your Bot is running at port ' + process.env.PORT || 3000)
 })
 let greetMessagesList = []
 client.on('ready', () => {
@@ -63,4 +63,4 @@ function randomNumber(min, max) {
 }
 
 client.login(process.env.DISCORD_BOT_TOKEN)
-app.listen(process.env.NODE_PORT || 3000)
+app.listen(process.env.PORT || 3000)
