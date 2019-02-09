@@ -6,7 +6,7 @@ const client = new Discord.Client()
 const channelInput = process.env.channelInput
 const channelOutput = process.env.channelOutput
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || 3000)
 let greetMessagesList = []
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
