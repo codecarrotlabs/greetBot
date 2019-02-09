@@ -4,9 +4,9 @@ require('dotenv').config()
 const app = express()
 const client = new Discord.Client()
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.NODE_PORT || 3000)
 app.get('/', (req, res) => {
-	res.send('Your Bot is running at port ' + process.env.PORT || 3000)
+	res.send('Your Bot is running at port ' + process.env.NODE_PORT || 3000)
 })
 let greetMessagesList = []
 client.on('ready', () => {
@@ -59,7 +59,8 @@ async function getWelcomeMessage() {
 
 function randomNumber(min, max) {
 	// TODO Make this function more functionable
+	// https://chancejs.com/basics/integer.html
 	return Math.floor(Math.random() * (max - min)) + min
 }
 
-client.login(process.env.TOKEN)
+client.login(process.env.DISCORD_BOT_TOKEN)
