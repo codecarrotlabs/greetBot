@@ -1,8 +1,8 @@
 {
   "name": "greetbot",
-  "description": "",
   "main": "index.js",
   "version": "0.0.1",
+  "description": "A discord bot which will greet you with passion.",
   "scripts": {
     "start": "node app.js",
     "develop": "nodemon app.js"
