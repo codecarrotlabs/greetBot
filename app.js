@@ -7,6 +7,8 @@ const client = new Discord.Client()
 app.get('/', (req, res) => {
 	res.send('Your Bot is running at port ' + process.env.PORT || 3000)
 })
+
+// NOTE Greet message Array accessible globally
 let greetMessagesList = []
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
