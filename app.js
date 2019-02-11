@@ -46,6 +46,10 @@ const userConfig = {
 client.on('message', message => {
 	let userBot = message.author.bot
 	if (!userBot || isGreetBot) {
+		let userMessage = message.content
+		let userInputCommand = userMessage.slice(0, 1)
+		if (userInputCommand === userConfig.userCommand) {
+		}
 	} else {
 		if (!isGreetBot) {
 			console.log('You are a bot')
