@@ -10,9 +10,12 @@ app.get('/', (req, res) => {
 
 // NOTE Greet message Array accessible globally
 let greetMessagesList = []
+// NOTE Greet bot boolean variable
+let isGreetBot;
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
 	fetchAllMessages()
+	isGreetBot = client.users.find(user => user.username.toLowerCase() === 'greetbot').id ? true : false;
 })
 
 client.on('guildMemberAdd', member => {
