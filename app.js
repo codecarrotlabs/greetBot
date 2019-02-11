@@ -61,7 +61,7 @@ async function getWelcomeMessage() {
 	return greetMessagesList[number]
 }
 
-function randomNumber(min, max) {
+const randomNumber = (min, max) => {
 	// TODO Make this function more functionable
 	// https://chancejs.com/basics/integer.html
 	return Math.floor(Math.random() * (max - min)) + min
