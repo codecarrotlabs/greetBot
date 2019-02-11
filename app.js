@@ -49,6 +49,11 @@ client.on('message', message => {
 		let userMessage = message.content
 		let userInputCommand = userMessage.slice(0, 1)
 		if (userInputCommand === userConfig.userCommand) {
+			let messageArgument = userMessage.split(' ', 1)
+			let userMessageArgument = messageArgument[0].slice(
+				1,
+				messageArgument[0].length
+			)
 		}
 	} else {
 		if (!isGreetBot) {
