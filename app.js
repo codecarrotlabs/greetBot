@@ -14,7 +14,6 @@ let greetMessagesList = []
 let isGreetBot;
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
-	fetchAllMessages()
 	isGreetBot = client.users.find(user => user.username.toLowerCase() === 'greetbot').id ? true : false;
 })
 
@@ -37,21 +36,6 @@ client.on('guildMemberAdd', member => {
 	}
 })
 
-async function fetchAllMessages() {
-	const channel = client.channels.find(
-		channel => channel.name === 'greetmessages'
-	)
-	const channelMessage = await channel.fetchMessages()
-	try {
-		channelMessage.map(message => {
-			greetMessagesList.push(message.content)
-		})
-		return (greetMessagesList = greetMessagesList.reverse())
-	} catch (error) {
-		console.log(
-			"This channel doesn't exist, please create one with the name 'greetmessages'."
-		)
-		console.log(error)
 	}
 }
 
