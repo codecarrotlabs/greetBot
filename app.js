@@ -62,11 +62,24 @@ const botNotification = (
 			}
 		})
 		.then(msg => {
+			if (botDeleteMessage) {
+				deleteBotMessage(msg, userConfig.deleteMessageTimeout)
+			}
 		})
 		.catch(error => {
 			console.log(error)
 		})
 }
+
+const deleteBotMessage = (message, time) => {
+	message
+		.delete(time * 1000)
+		.then(msg => {
+			console.log('Message deleted successfully')
+		})
+		.catch(err => {
+			console.log(err)
+		})
 }
 
 async function getWelcomeMessage() {
