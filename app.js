@@ -54,6 +54,10 @@ client.on('message', message => {
 				1,
 				messageArgument[0].length
 			)
+			switch (
+				userMessageArgument.toLowerCase()
+			) {
+			}
 		}
 	} else {
 		if (!isGreetBot) {
