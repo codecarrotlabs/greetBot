@@ -36,6 +36,10 @@ client.on('guildMemberAdd', member => {
 	}
 })
 
+const userConfig = {
+	userCommand: '!',
+	deleteMessageTimeout: 10
+}
 	}
 }
 
