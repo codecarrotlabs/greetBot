@@ -40,7 +40,10 @@ const userConfig = {
 	userCommand: '!',
 	deleteMessageTimeout: 10
 }
+
+client.on('message', message => {
 	}
+})
 }
 
 async function getWelcomeMessage() {
