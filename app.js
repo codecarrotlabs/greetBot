@@ -44,6 +44,29 @@ const userConfig = {
 client.on('message', message => {
 	}
 })
+
+// NOTE Red 'F04747', Green '43b581'
+const botNotification = (
+	message,
+	botReplyTitle,
+	botReplyDescription,
+	botReplyNotificationColor,
+	botDeleteMessage
+) => {
+	message.channel
+		.send({
+			embed: {
+				title: botReplyTitle,
+				description: botReplyDescription,
+				color: parseInt(`0x${botReplyNotificationColor}`)
+			}
+		})
+		.then(msg => {
+		})
+		.catch(error => {
+			console.log(error)
+		})
+}
 }
 
 async function getWelcomeMessage() {
