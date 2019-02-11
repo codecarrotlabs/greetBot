@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
 let greetMessagesList = []
 // NOTE Greet bot boolean variable
 let isGreetBot;
+
+// TODO Once join the server send the !help message.
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
 	isGreetBot = client.users.find(user => user.username.toLowerCase() === 'greetbot').id ? true : false;
