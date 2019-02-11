@@ -7,5 +7,9 @@ module.exports = [
 	"Nice to meet you",
 	"I knew you will join my server",
 	"Glad, we finally meet.",
-	"What a plesant day."
+	"What a plesant day.",
+	"Welcome to World's best Discord server",
+	"Wait a minute! who are you",
+	"Are you serious bro",
+	"Your Computer is working man",
 ]
