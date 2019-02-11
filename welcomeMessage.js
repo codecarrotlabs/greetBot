@@ -1,5 +1,5 @@
 module.exports = [
-  "1",
+  "Hi",
 	"Welcome",
 	"Glad you joined!",
 	"Thank you for joining the discord server.",
