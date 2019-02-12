@@ -65,6 +65,25 @@ client.on('message', message => {
 						1 + messageArgument[0].length,
 						userMessage.length
 					)
+					if (messageContent !== '') {
+						greetMessagesList.push(messageContent)
+						// ANCHOR At mention the user who run the command
+						botNotification(
+							message,
+							'Notification',
+							'Your greet message `' + messageContent + '` is added.',
+							'43b581',
+							true
+						)
+					} else {
+						botNotification(
+							message,
+							'Note',
+							'You need to type a greet message.',
+							'faa61a',
+							true
+						)
+					}
 					break
 				case 'delete':
 					break
