@@ -123,6 +123,28 @@ client.on('message', message => {
 						userMessage.length - newEditMessage.length
 					)
 					let oldEditMessage = greetMessagesList[editMessageId - 1]
+					if (newEditMessage != '' || Number.isInteger(editMessageId)) {
+						greetMessagesList[editMessageId - 1] = newEditMessage
+						botNotification(
+							message,
+							'Notification',
+							'Your greet message `' +
+							editMessageId +
+							': ' +
+							oldEditMessage +
+							'` is edited.',
+							'43b581',
+							true
+						)
+					} else {
+						botNotification(
+							message,
+							'Note',
+							'Enter the message ID and new message to edit the message.',
+							'faa61a',
+							false
+						)
+					}
 					break
 				case 'list':
 					break
