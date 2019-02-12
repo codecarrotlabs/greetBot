@@ -64,6 +64,8 @@ client.on('message', message => {
 				case 'edit':
 					// TODO make a edit command
 					break
+				case 'list':
+					break
 			}
 		}
 	} else {
