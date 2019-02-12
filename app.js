@@ -34,6 +34,7 @@ client.on('guildMemberAdd', member => {
 	if (!userBot) {
 		getWelcomeMessage()
 			.then(result => {
+				// TODO Allow user to change output channel.
 				const channelOutput = member.guild.channels.find(
 					channel => channel.name === 'general'
 				).id
