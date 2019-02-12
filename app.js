@@ -61,6 +61,10 @@ client.on('message', message => {
 			)
 			switch (userMessageArgument.toLowerCase()) {
 				case 'add':
+					let messageContent = userMessage.slice(
+						1 + messageArgument[0].length,
+						userMessage.length
+					)
 					break
 				case 'delete':
 					break
