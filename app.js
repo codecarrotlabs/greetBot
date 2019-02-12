@@ -114,7 +114,15 @@ client.on('message', message => {
 					}
 					break
 				case 'edit':
-					// TODO make a edit command
+					let newEditMessage = userMessage.slice(
+						1 + messageArgument[0].length + 2,
+						userMessage.length
+					)
+					let editMessageId = userMessage.slice(
+						1 + messageArgument[0].length,
+						userMessage.length - newEditMessage.length
+					)
+					let oldEditMessage = greetMessagesList[editMessageId - 1]
 					break
 				case 'list':
 					break
