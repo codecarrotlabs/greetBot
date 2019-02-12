@@ -68,11 +68,25 @@ client.on('message', message => {
 					break
 				case 'config':
 					// TODO User can use this command to config the bot
+					botNotification(
+						message,
+						'Note',
+						"We're still working on this feature",
+						'faa61a',
+						true
+					)
 					break
 				case 'help':
 					break
 				case "import":
 					// TODO Feature to import messages in bulk
+					botNotification(
+						message,
+						'Note',
+						"We're still working on this feature",
+						'faa61a',
+						true
+					)
 					break
 				default:
 					message.channel.send(userConfig.userCommand + 'help')
