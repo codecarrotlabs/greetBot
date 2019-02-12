@@ -59,6 +59,8 @@ client.on('message', message => {
 			) {
 				case 'add':
 					break
+				case 'delete':
+					break
 			}
 		}
 	} else {
