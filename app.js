@@ -74,6 +74,8 @@ client.on('message', message => {
 				case "import":
 					// TODO Feature to import messages in bulk
 					break
+				default:
+					message.channel.send(userConfig.userCommand + 'help')
 			}
 		}
 	} else {
