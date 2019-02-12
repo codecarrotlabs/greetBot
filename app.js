@@ -61,6 +61,9 @@ client.on('message', message => {
 					break
 				case 'delete':
 					break
+				case 'edit':
+					// TODO make a edit command
+					break
 			}
 		}
 	} else {
