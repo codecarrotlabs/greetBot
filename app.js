@@ -147,6 +147,10 @@ client.on('message', message => {
 					}
 					break
 				case 'list':
+					let userArgumentGreetMessageList = []
+					greetMessagesList.forEach((item, index) => {
+						userArgumentGreetMessageList.push(index + 1 + ': ' + item)
+					})
 					break
 				case 'config':
 					// TODO User can use this command to config the bot
