@@ -139,7 +139,11 @@ const deleteBotMessage = (message, time) => {
 async function getWelcomeMessage() {
 	const number = randomNumber(1, greetMessagesList.length)
 	console.log(number + ': ' + greetMessagesList[number])
-	return greetMessagesList[number]
+	if (greetMessagesList.length !== 0) {
+		return greetMessagesList[number]
+	} else {
+		return 'I have no greet messages to show :crying_cat_face:'
+	}
 }
 
 const randomNumber = (min, max) => {
