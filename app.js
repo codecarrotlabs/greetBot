@@ -57,6 +57,8 @@ client.on('message', message => {
 			switch (
 				userMessageArgument.toLowerCase()
 			) {
+				case 'add':
+					break
 			}
 		}
 	} else {
