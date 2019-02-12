@@ -65,11 +65,14 @@ client.on('message', message => {
 					// TODO make a edit command
 					break
 				case 'list':
+					break
 				case 'config':
 					// TODO User can use this command to config the bot
 					break
 				case 'help':
 					break
+				case "import":
+					// TODO Feature to import messages in bulk
 					break
 			}
 		}
