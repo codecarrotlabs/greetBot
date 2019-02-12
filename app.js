@@ -151,6 +151,22 @@ client.on('message', message => {
 					greetMessagesList.forEach((item, index) => {
 						userArgumentGreetMessageList.push(index + 1 + ': ' + item)
 					})
+					if (userArgumentGreetMessageList.length !== 0) {
+						message.channel.send(
+							'**List of Greet Messages**\n' +
+								'```\n' +
+								userArgumentGreetMessageList.join('\n') +
+								'\n```'
+						)
+					} else {
+						botNotification(
+							message,
+							'Note',
+							'There are no greet messages.',
+							'faa61a',
+							false
+						)
+					}
 					break
 				case 'config':
 					// TODO User can use this command to config the bot
