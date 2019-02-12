@@ -65,6 +65,9 @@ client.on('message', message => {
 					// TODO make a edit command
 					break
 				case 'list':
+				case 'config':
+					// TODO User can use this command to config the bot
+					break
 					break
 			}
 		}
