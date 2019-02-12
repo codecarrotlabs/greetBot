@@ -86,6 +86,10 @@ client.on('message', message => {
 					}
 					break
 				case 'delete':
+					let deleteMessageId = userMessage.slice(
+						1 + messageArgument[0].length,
+						userMessage.length
+					)
 					break
 				case 'edit':
 					// TODO make a edit command
