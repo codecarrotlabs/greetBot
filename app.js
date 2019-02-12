@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 // NOTE Greet message Array accessible globally
 let greetMessagesList = []
 // NOTE Greet bot boolean variable
-let isGreetBot;
+let isGreetBot
 
 const userConfig = {
 	userCommand: '!',
@@ -21,7 +21,11 @@ const userConfig = {
 // TODO Once join the server send the !help message.
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
-	isGreetBot = client.users.find(user => user.username.toLowerCase() === 'greetbot').id ? true : false;
+	isGreetBot = client.users.find(
+		user => user.username.toLowerCase() === 'greetbot'
+	).id
+		? true
+		: false
 })
 
 client.on('guildMemberAdd', member => {
@@ -54,9 +58,7 @@ client.on('message', message => {
 				1,
 				messageArgument[0].length
 			)
-			switch (
-				userMessageArgument.toLowerCase()
-			) {
+			switch (userMessageArgument.toLowerCase()) {
 				case 'add':
 					break
 				case 'delete':
@@ -78,7 +80,7 @@ client.on('message', message => {
 					break
 				case 'help':
 					break
-				case "import":
+				case 'import':
 					// TODO Feature to import messages in bulk
 					botNotification(
 						message,
