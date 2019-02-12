@@ -90,6 +90,28 @@ client.on('message', message => {
 						1 + messageArgument[0].length,
 						userMessage.length
 					)
+					if (deleteMessageId != '' || Number.isInteger(deleteMessageId)) {
+						let deletedGreetMessage = greetMessagesList.splice(
+							deleteMessageId - 1,
+							1
+						)
+						botNotification(
+							message,
+							'Alert',
+							'Your greet message `' + deletedGreetMessage + '` is deleted.',
+							'F04747',
+							true
+						)
+						message.channel.send(userConfig.userCommand + 'list')
+					} else {
+						botNotification(
+							message,
+							'Note',
+							'Enter the message ID to delete the message.',
+							'faa61a',
+							true
+						)
+					}
 					break
 				case 'edit':
 					// TODO make a edit command
