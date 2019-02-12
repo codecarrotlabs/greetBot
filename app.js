@@ -179,6 +179,44 @@ client.on('message', message => {
 					)
 					break
 				case 'help':
+					message.channel.send({
+						embed: {
+							title: 'Available commands',
+							description: 'List of available commands.',
+							fields: [
+								{
+									name: 'Add a new greet message',
+									value: '!add [new message]',
+									inline: true
+								},
+								{
+									name: 'Edit a greet message',
+									value: '!edit [message id] [new message]',
+									inline: true
+								},
+								{
+									name: 'Delete a greet message',
+									value: '!delete [message id]',
+									inline: true
+								},
+								{
+									name: 'See all greet messages',
+									value: '!list',
+									inline: true
+								},
+								{
+									name: 'Configure the Greet bot',
+									value: '!config [config name] [config value]',
+									inline: true
+								},
+								{
+									name: 'Import messages in bulk',
+									value: '!import [message in new line]',
+									inline: true
+								}
+							]
+						}
+					})
 					break
 				case 'import':
 					// TODO Feature to import messages in bulk
