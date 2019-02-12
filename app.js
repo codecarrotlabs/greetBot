@@ -13,6 +13,11 @@ let greetMessagesList = []
 // NOTE Greet bot boolean variable
 let isGreetBot;
 
+const userConfig = {
+	userCommand: '!',
+	deleteMessageTimeout: 10
+}
+
 // TODO Once join the server send the !help message.
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`)
@@ -37,11 +42,6 @@ client.on('guildMemberAdd', member => {
 			})
 	}
 })
-
-const userConfig = {
-	userCommand: '!',
-	deleteMessageTimeout: 10
-}
 
 client.on('message', message => {
 	let userBot = message.author.bot
