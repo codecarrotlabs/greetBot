@@ -17,3 +17,7 @@ Found a problem or missing feature? Issues and feature requests can be submitted
 ## Contribute
 
 PRs welcome! Please see our [Contribution](https://gitlab.com/codecarrot/greetbot/wikis/contribution) for more details.
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a>
