@@ -4,7 +4,7 @@ GreetBot will greet new people joining your discord server with happy messages.
 
 ## Installation
 
-To install the bot in your discord server, [read the wiki](wiki.md).
+To install the bot in your discord server, [read the wiki](https://gitlab.com/codecarrot/greetbot/wikis/home).
 
 ## Issues
 
