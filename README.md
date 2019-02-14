@@ -6,7 +6,7 @@ GreetBot will greet new people joining your discord server with happy messages.
 
 To install the bot in your discord server, [read the wiki](https://gitlab.com/codecarrot/greetbot/wikis/home).
 
-## ⚠ Cuation
+## ⚠ Caution
 
 Once the server is stop or crashed, all the messages you have saved might lost. We suggest you to keep the messages save somewhere. We are working on feature to [import messages in bulk](https://gitlab.com/codecarrot/greetbot/issues/1).
 
